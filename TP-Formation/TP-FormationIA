@@ -1,0 +1,98 @@
+Exercice 3
+
+a.le chiffre d'affaires total
+
+SELECT SUM (prix * qte) AS Chiffre_affaire_total
+FROM ventes
+
+Chiffre_affaire_total : 44825
+
+
+b.les ventes par produit
+
+
+SELECT produit, 
+SUM (qte) AS chiffre_affaire_total_par_produit
+FROM ventes
+GROUP BY produit
+
+Produit A 1750
+Produit B 1055
+Produit C 575
+
+
+c.les ventes par région
+
+SELECT region, 
+SUM (qte) AS chiffre_affaire_total_par_region
+FROM ventes
+GROUP BY region
+
+Nord 1605
+Sud 1775
+
+
+
+
+Exercice 6
+
+
+Résultat:
+6a1 - Moyenne du chiffre d’affaires par produit
+     produit
+Produit A    1250.000000
+Produit B    1217.307692
+Produit C     958.333333
+Name: ca, dtype: float64 
+
+     Moyenne duvolume des ventes par produit
+     produit
+Produit A    125.000000
+Produit B     81.153846
+Produit C     47.916667
+Name: qte, dtype: float64
+
+
+6a2 - Mediannes du chiffre d’affaires par produit
+    produit
+Produit A    1225.0
+Produit B    1200.0
+Produit C     900.0
+Name: ca, dtype: float64
+
+    medianes du volume des ventes par produit :
+     produit
+Produit A    122.5
+Produit B     80.0
+Produit C     45.0
+Name: qte, dtype: float64
+
+
+6b1 - l’écart-type pour le volume des ventes par produit
+     produit
+Produit A    38.078866
+Produit B    21.228307
+Produit C    17.895953
+Name: qte, dtype: float64
+
+6b2 - la variance pour le volume des ventes par produit
+    produit
+Produit A    1450.000000
+Produit B     450.641026
+Produit C     320.265152
+Name: qte, dtype: float64
+
+
+Exercice 7
+
+Résultat  
+
+--> Ventes par produit
+{'Produit A': 1750, 'Produit B': 1055, 'Produit C': 575}
+
+--> Produit le plus vendu
+Produit A pour 1750 ventes
+
+--> Produit le moins vendu
+Produit C pour 575 ventes
+
